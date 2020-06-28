@@ -13,10 +13,10 @@ const NewResume = () => {
 
     const response = await fetch('/api/resumes', {
       method: 'POST',
-      body: {
-        name,
-        description,
+      headers: {
+        'Content-Type': 'application/json',
       },
+      body: JSON.stringify({name, description}),
     });
 
     const json = await response.json();
