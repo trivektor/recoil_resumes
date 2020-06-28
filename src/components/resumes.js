@@ -1,9 +1,16 @@
-import React from 'react';
+import React, {Fragment} from 'react';
+import {Link} from 'react-router-dom';
+import {Button, Intent} from '@blueprintjs/core';
 
 const Resumes = () => {
   return (
-    <div>
-    </div>
+    <Fragment>
+      <Link to="/resumes/new">
+        <Button
+          text="New Resume"
+          intent={Intent.SUCCESS} />
+      </Link>
+    </Fragment>
   );
 };
 

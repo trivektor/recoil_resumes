@@ -8,7 +8,7 @@ import {
 import {Navbar} from '@blueprintjs/core';
 import '@blueprintjs/core/lib/css/blueprint.css';
 
-import {Resumes, Resume} from './components';
+import {Resumes, Resume, NewResume} from './components';
 
 function App() {
   return (
@@ -18,12 +18,15 @@ function App() {
           <Navbar.Heading>Resumes</Navbar.Heading>
         </Navbar.Group>
       </Navbar>
-      <Router>
-        <Switch>
-          <Route exact path='/' children={<Resumes />} />
-          <Route exact path='/resume/:id' children={<Resume />} />
-        </Switch>
-      </Router>
+      <div style={{padding: 20}}>
+        <Router>
+          <Switch>
+            <Route exact path='/' children={<Resumes />} />
+            <Route exact path='/resume/:id' children={<Resume />} />
+            <Route exact path='/resumes/new' children={<NewResume />} />
+          </Switch>
+        </Router>
+      </div>
     </Fragment>
   );
 }
